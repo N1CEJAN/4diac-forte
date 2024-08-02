@@ -28,6 +28,7 @@ if(FORTE_COM_DDS)
 
   # include types
   add_subdirectory("types/action_msgs")
+  add_subdirectory("types/conversion_tests")
   add_subdirectory("types/example_interfaces")
   add_subdirectory("types/example_message")
   add_subdirectory("types/turtlesim")

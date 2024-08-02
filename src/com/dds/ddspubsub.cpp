@@ -20,6 +20,7 @@
 #include "types/action_msgs/srv/CancelGoal/CancelGoalResponsePubSub.h"
 
 #include "types/example_message/msg/StringDebug/StringDebugPubSub.h"
+#include "types/conversion_tests/msg/Ros2Primitives/Ros2PrimitivesPubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -202,6 +203,9 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
                                                             pa_enPubSubRole);
 
   // add other topic types here
+  if (pa_sTopicType == "conversion_tests::msg::Ros2Primitives")
+    return new conversion_tests::Ros2PrimitivesPubSub(pa_sTopicName,
+                                                      pa_enPubSubRole);
 
   return nullptr;
 }
