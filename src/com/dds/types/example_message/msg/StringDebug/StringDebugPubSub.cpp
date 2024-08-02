@@ -21,7 +21,7 @@
 #include "types/example_message/msg/StringDebug/StringDebug.h"
 
 #ifdef FORTE_ENABLE_GENERATED_SOURCE_CPP
-#include "StringPubSub_gen.cpp"
+#include "StringDebugPubSub_gen.cpp"
 #endif
 
 std::string example_message::StringDebugPubSub::registerType(DomainParticipant* paParticipant) {

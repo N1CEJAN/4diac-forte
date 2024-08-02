@@ -41,7 +41,7 @@ if(FORTE_COM_DDS)
     fastrtps 
     fastcdr 
     tinyxml2
-    foonathan_memory-0.7.1-dbg
+    /usr/local/foonathan_memory-0.7.1-dbg/lib/libfoonathan_memory-0.7.1-dbg.a
   )
 
   # fast-dds requires this
