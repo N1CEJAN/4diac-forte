@@ -34,27 +34,27 @@ bool conversion_tests::Ros2PrimitivesPubSub::validateType(const CStringDictionar
 }
 
 bool conversion_tests::Ros2PrimitivesPubSub::publish(CIEC_STRUCT* data) {
-  const auto casted = static_cast<CIEC_ROS2_conversion_tests__msg__Ros2Primitives*> (data);
+  const auto casted = dynamic_cast<CIEC_ROS2_conversion_tests__msg__Ros2Primitives*> (data);
 
-  const bool a_bool = casted->var_a_bool;
-  const TForteByte a_byte = (TForteByte) casted->var_a_byte;
-  const TForteFloat a_float32 = (TForteFloat) casted->var_a_float32;
-  const TForteDFloat a_float64 = (TForteDFloat) casted->var_a_float64;
-  const TForteInt8 an_int8 = (TForteInt8) casted->var_an_int8;
-  const TForteInt16 an_int16 = (TForteInt16) casted->var_an_int16;
-  const TForteInt32 an_int32 = (TForteInt32) casted->var_an_int32;
-  const TForteInt64 an_int64 = (TForteInt64) casted->var_an_int64;
-  const TForteUInt8 a_uint8 = (TForteUInt8) casted->var_a_uint8;
-  const TForteUInt16 a_uint16 = (TForteUInt16) casted->var_a_uint16;
-  const TForteUInt32 a_uint32 = (TForteUInt32) casted->var_a_uint32;
-  const TForteUInt64 a_uint64 = (TForteUInt64) casted->var_a_uint64;
-  const TForteChar a_char = (TForteChar) casted->var_a_char;
+  const auto a_bool = static_cast<bool>(casted->var_a_bool);
+  const auto a_byte = static_cast<TForteByte>(casted->var_a_byte);
+  const auto a_float32 = static_cast<TForteFloat>(casted->var_a_float32);
+  const auto a_float64 = static_cast<TForteDFloat>(casted->var_a_float64);
+  const auto an_int8 = static_cast<TForteInt8>(casted->var_an_int8);
+  const auto an_int16 = static_cast<TForteInt16>(casted->var_an_int16);
+  const auto an_int32 = static_cast<TForteInt32>(casted->var_an_int32);
+  const auto an_int64 = static_cast<TForteInt64>(casted->var_an_int64);
+  const auto a_uint8 = static_cast<TForteUInt8>(casted->var_a_uint8);
+  const auto a_uint16 = static_cast<TForteUInt16>(casted->var_a_uint16);
+  const auto a_uint32 = static_cast<TForteUInt32>(casted->var_a_uint32);
+  const auto a_uint64 = static_cast<TForteUInt64>(casted->var_a_uint64);
+  const auto a_char = static_cast<TForteChar>(casted->var_a_char);
   const std::string a_string = casted->var_a_string.getStorage();
   // const std::wstring a_wstring = casted->var_a_wstring;
 
   DEVLOG_DEBUG(("[DDS Publisher/std_msgs/String] Sent ros2primitives.\n").c_str());
 
-  conversion_tests::msg::Ros2Primitives ros2primitives;
+  msg::Ros2Primitives ros2primitives;
   ros2primitives.a_bool(a_bool);
   ros2primitives.a_byte(a_byte);
   ros2primitives.a_float32(a_float32);

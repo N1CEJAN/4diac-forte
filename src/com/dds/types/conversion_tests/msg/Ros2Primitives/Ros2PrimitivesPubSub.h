@@ -10,8 +10,8 @@
  *    Malte Grave - initial implementation
  ********************************************************************************/
 
-#ifndef _COM_DDS_TYPES_EXAMPLE_MSG_MSG_STRINGDEBUG_PUBLISHER_H_
-#define _COM_DDS_TYPES_EXAMPLE_MSG_MSG_STRINGDEBUG_PUBLISHER_H_
+#ifndef _COM_DDS_TYPES_CONVERSION_TESTS_MSG_ROS2PRIMITIVES_PUBLISHER_H_
+#define _COM_DDS_TYPES_CONVERSION_TESTS_MSG_ROS2PRIMITIVES_PUBLISHER_H_
 
 #include "ddspubsub.h"
 #include "Ros2PrimitivesPubSubTypes.h"
