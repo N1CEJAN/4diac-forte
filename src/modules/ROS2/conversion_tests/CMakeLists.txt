@@ -12,15 +12,5 @@
 # *******************************************************************************/
 # *******************************************************************************/
 
-forte_add_module(ROS2 ON "ROS2 data types for the FastDDS layer")
-if (FORTE_MODULE_ROS2)
-  add_subdirectory("action_msgs")
-  add_subdirectory("builtin_interfaces")
-  add_subdirectory("conversion_tests")
-  add_subdirectory("example_interfaces")
-  add_subdirectory("example_message")
-  add_subdirectory("turtlesim")
-  add_subdirectory("unique_identifier_msgs")
-  
-  forte_add_include_directories(${CMAKE_CURRENT_SOURCE_DIR})
-endif()
+
+forte_add_sourcefile_hcpp(msg/ROS2_conversion_tests__msg__Ros2Primitives_dtp)
