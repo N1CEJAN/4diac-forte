@@ -52,7 +52,7 @@ bool conversion_tests::Ros2PrimitivesPubSub::publish(CIEC_STRUCT* data) {
   const std::string a_string = casted->var_a_string.getStorage();
   // const std::wstring a_wstring = casted->var_a_wstring;
 
-  DEVLOG_DEBUG(("[DDS Publisher/std_msgs/String] Sent ros2primitives.\n").c_str());
+  DEVLOG_DEBUG(("[DDS Publisher/std_msgs/String] Sent ros2primitives.\n"));
 
   msg::Ros2Primitives ros2primitives;
   ros2primitives.a_bool(a_bool);
