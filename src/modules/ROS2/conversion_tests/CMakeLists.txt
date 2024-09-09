@@ -13,4 +13,7 @@
 # *******************************************************************************/
 
 
-forte_add_sourcefile_hcpp(msg/ROS2_conversion_tests__msg__Ros2Primitives_dtp)
+forte_add_sourcefile_hcpp(
+        msg/ROS2_conversion_tests__msg__Ros2Primitives_dtp
+        msg/ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp
+)

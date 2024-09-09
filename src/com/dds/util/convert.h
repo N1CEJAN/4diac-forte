@@ -16,6 +16,16 @@
 #include "../types/unique_identifier_msgs/msg/UUID/UUID.h"
 #include <unique_identifier_msgs/msg/UUID/ROS2_unique_identifier_msgs__msg__UUID_dtp.h>
 
+namespace general_purpose {
+namespace msg {
+
+std::string wstring2String(const std::wstring& wstr);
+CIEC_WSTRING convertWstring2CIEC_WSTRING(const std::wstring& wstring);
+std::wstring convertCIEC_WSTRING2Wstring(const CIEC_WSTRING& ciec_wstring);
+
+}
+}
+
 namespace unique_identifier_msgs {
 namespace msg {
 
