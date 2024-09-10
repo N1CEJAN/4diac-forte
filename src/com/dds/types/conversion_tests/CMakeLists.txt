@@ -14,3 +14,4 @@
 
 add_subdirectory("msg/Ros2Primitives")
 add_subdirectory("msg/Ros2PrimitiveDatentypen")
+add_subdirectory("msg/Ros2Arrayspezifikationen")

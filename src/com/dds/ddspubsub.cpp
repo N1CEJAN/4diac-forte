@@ -22,6 +22,7 @@
 #include "types/example_message/msg/StringDebug/StringDebugPubSub.h"
 #include "types/conversion_tests/msg/Ros2Primitives/Ros2PrimitivesPubSub.h"
 #include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
+#include "types/conversion_tests/msg/Ros2Arrayspezifikationen/Ros2ArrayspezifikationenPubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -45,6 +46,7 @@
 #include <fastdds/dds/publisher/Publisher.hpp>
 
 #include "basecommfb.h"
+#include "types/conversion_tests/msg/Ros2Arrayspezifikationen/Ros2ArrayspezifikationenPubSub.h"
 
 using namespace eprosima::fastdds::dds;
 using namespace eprosima::fastrtps::types;
@@ -211,6 +213,10 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
   if (pa_sTopicType == "conversion_tests::msg::Ros2PrimitiveDatentypen")
     return new conversion_tests::Ros2PrimitiveDatentypenPubSub(pa_sTopicName,
                                                       pa_enPubSubRole);
+  // add other topic types here
+  if (pa_sTopicType == "conversion_tests::msg::Ros2Arrayspezifikationen")
+    return new conversion_tests::Ros2ArrayspezifikationenPubSub(pa_sTopicName,
+                                                                pa_enPubSubRole);
 
   return nullptr;
 }
