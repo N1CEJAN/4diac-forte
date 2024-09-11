@@ -26,6 +26,8 @@
 #include "types/conversion_tests/msg/Ros2Arrayspezifikationen2/Ros2Arrayspezifikationen2PubSub.h"
 #include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentypPubSub.h"
 #include "types/conversion_tests/msg/Ros2Referenzen/Ros2ReferenzenPubSub.h"
+#include "types/conversion_tests/msg/Ros2DynamischesArray1/Ros2DynamischesArray1PubSub.h"
+#include "types/conversion_tests/msg/Ros2DynamischesArray2/Ros2DynamischesArray2PubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -230,6 +232,14 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
   // add other topic types here
   if (pa_sTopicType == "conversion_tests::msg::Ros2Referenzen")
     return new conversion_tests::Ros2ReferenzenPubSub(pa_sTopicName,
+                                                      pa_enPubSubRole);
+  // add other topic types here
+  if (pa_sTopicType == "conversion_tests::msg::Ros2DynamischesArray1")
+    return new conversion_tests::Ros2DynamischesArray1PubSub(pa_sTopicName,
+                                                      pa_enPubSubRole);
+  // add other topic types here
+  if (pa_sTopicType == "conversion_tests::msg::Ros2DynamischesArray2")
+    return new conversion_tests::Ros2DynamischesArray2PubSub(pa_sTopicName,
                                                       pa_enPubSubRole);
 
   return nullptr;
