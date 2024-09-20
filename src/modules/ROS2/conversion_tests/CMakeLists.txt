@@ -22,4 +22,5 @@ forte_add_sourcefile_hcpp(
         msg/ROS2_conversiontests_msg_Ros2Referenzen_dtp
         msg/ROS2_conversiontests_msg_Ros2DynamischesArray1_dtp
         msg/ROS2_conversiontests_msg_Ros2DynamischesArray2_dtp
+        msg/Iec61499Bitstrings_dtp
 )
