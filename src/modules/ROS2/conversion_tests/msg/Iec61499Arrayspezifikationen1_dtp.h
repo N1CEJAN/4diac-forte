@@ -3,7 +3,7 @@
  ***
  *** This file was generated using the 4DIAC FORTE Export Filter V1.0.x NG!
  ***
- *** Name: ROS2_conversiontests_msg_Ros2Referenzen
+ *** Name: Iec61499Arrayspezifikationen1
  *** Description:
  *** Version:
  *************************************************************************/
@@ -12,7 +12,7 @@
 
 #include "forte_struct.h"
 
-#include "ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp.h"
+#include "forte_bool.h"
 #include "iec61131_functions.h"
 #include "forte_array_common.h"
 #include "forte_array.h"
@@ -20,16 +20,16 @@
 #include "forte_array_variable.h"
 
 
-class CIEC_ROS2_conversiontests_msg_Ros2Referenzen final : public CIEC_STRUCT {
-  DECLARE_FIRMWARE_DATATYPE(ROS2_conversiontests_msg_Ros2Referenzen)
+class CIEC_Iec61499Arrayspezifikationen1 final : public CIEC_STRUCT {
+  DECLARE_FIRMWARE_DATATYPE(Iec61499Arrayspezifikationen1)
 
   public:
-    CIEC_ROS2_conversiontests_msg_Ros2Referenzen();
+    CIEC_Iec61499Arrayspezifikationen1();
 
-    CIEC_ROS2_conversiontests_msg_Ros2Referenzen(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &paabsolute_reference, const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &parelative_reference);
+    CIEC_Iec61499Arrayspezifikationen1(const CIEC_ARRAY_COMMON<CIEC_BOOL> &pastatic_array_with_capacity, const CIEC_ARRAY_COMMON<CIEC_BOOL> &pastatic_array_with_indexation);
 
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_absolute_reference;
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_relative_reference;
+    CIEC_ARRAY_FIXED<CIEC_BOOL, 0, 2> var_static_array_with_capacity;
+    CIEC_ARRAY_FIXED<CIEC_BOOL, -1, 1> var_static_array_with_indexation;
 
     size_t getStructSize() const override {
       return 2;

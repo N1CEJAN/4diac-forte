@@ -3,7 +3,7 @@
  ***
  *** This file was generated using the 4DIAC FORTE Export Filter V1.0.x NG!
  ***
- *** Name: ROS2_conversiontests_msg_Ros2Referenzen
+ *** Name: ROS2_conversiontests_msg_Ros2Standardwertliterale5
  *** Description:
  *** Version:
  *************************************************************************/
@@ -12,7 +12,8 @@
 
 #include "forte_struct.h"
 
-#include "ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp.h"
+#include "forte_sint.h"
+#include "forte_ulint.h"
 #include "iec61131_functions.h"
 #include "forte_array_common.h"
 #include "forte_array.h"
@@ -20,19 +21,21 @@
 #include "forte_array_variable.h"
 
 
-class CIEC_ROS2_conversiontests_msg_Ros2Referenzen final : public CIEC_STRUCT {
-  DECLARE_FIRMWARE_DATATYPE(ROS2_conversiontests_msg_Ros2Referenzen)
+class CIEC_ROS2_conversiontests_msg_Ros2Standardwertliterale5 final : public CIEC_STRUCT {
+  DECLARE_FIRMWARE_DATATYPE(ROS2_conversiontests_msg_Ros2Standardwertliterale5)
 
   public:
-    CIEC_ROS2_conversiontests_msg_Ros2Referenzen();
+    CIEC_ROS2_conversiontests_msg_Ros2Standardwertliterale5();
 
-    CIEC_ROS2_conversiontests_msg_Ros2Referenzen(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &paabsolute_reference, const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &parelative_reference);
+    CIEC_ROS2_conversiontests_msg_Ros2Standardwertliterale5(const CIEC_ARRAY_COMMON<CIEC_SINT> &paint_oct, const CIEC_ULINT &paint_oct_element_counter, const CIEC_ARRAY_COMMON<CIEC_SINT> &paint_bin, const CIEC_ULINT &paint_bin_element_counter);
 
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_absolute_reference;
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_relative_reference;
+    CIEC_ARRAY_FIXED<CIEC_SINT, 0, 2> var_int_oct;
+    CIEC_ULINT var_int_oct_element_counter;
+    CIEC_ARRAY_FIXED<CIEC_SINT, 0, 2> var_int_bin;
+    CIEC_ULINT var_int_bin_element_counter;
 
     size_t getStructSize() const override {
-      return 2;
+      return 4;
     }
 
     const CStringDictionary::TStringId* elementNames() const override {

@@ -6,13 +6,22 @@
 # http://www.eclipse.org/legal/epl-2.0.
 #
 # SPDX-License-Identifier: EPL-2.0
-# 
+#
 # Contributors:
 #     Malte Grave
 # *******************************************************************************/
 # *******************************************************************************/
 
-add_subdirectory("msg/Ros2PrimitiveDatentypen")
-add_subdirectory("msg/Iec61499PrimitiveDatentypen")
-#add_subdirectory("msg/Ros2Arrayspezifikationen1")
-#add_subdirectory("msg/Ros2Referenzen")
+forte_add_sourcefile_cpp(
+        Iec61499PrimitiveDatentypen.cxx
+        Iec61499PrimitiveDatentypenPubSubTypes.cxx
+)
+
+forte_add_sourcefile_h(
+        Iec61499PrimitiveDatentypen.h
+        Iec61499PrimitiveDatentypenPubSubTypes.h
+)
+
+forte_add_sourcefile_hcpp(
+        Iec61499PrimitiveDatentypenPubSub
+)

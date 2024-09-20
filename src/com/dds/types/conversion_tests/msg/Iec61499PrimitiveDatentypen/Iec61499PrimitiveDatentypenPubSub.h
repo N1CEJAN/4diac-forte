@@ -10,33 +10,31 @@
  *    Malte Grave - initial implementation
  ********************************************************************************/
 
-#ifndef _COM_DDS_TYPES_CONVERSION_TESTS_MSG_ROS2PRIMITIVEDATENTYPEN_PUBLISHER_H_
-#define _COM_DDS_TYPES_CONVERSION_TESTS_MSG_ROS2PRIMITIVEDATENTYPEN_PUBLISHER_H_
+#ifndef _COM_DDS_TYPES_CONVERSION_TESTS_MSG_IEC61499PRIMITIVEDATENTYPEN_PUBLISHER_H_
+#define _COM_DDS_TYPES_CONVERSION_TESTS_MSG_IEC61499PRIMITIVEDATENTYPEN_PUBLISHER_H_
 
 #include "ddspubsub.h"
-#include "Ros2PrimitiveDatentypenPubSubTypes.h"
+#include "Iec61499PrimitiveDatentypenPubSubTypes.h"
 
 #include <memory>
 
-#include "conversion_tests/msg/ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp.h"
-
+#include "conversion_tests/msg/Iec61499PrimitiveDatentypen_dtp.h"
 
 namespace conversion_tests {
 
-class Ros2PrimitiveDatentypenPubSub : public CDDSPubSub {
+class Iec61499PrimitiveDatentypenPubSub : public CDDSPubSub {
   public:
-    Ros2PrimitiveDatentypenPubSub(std::string topicName, EPubSubRole role) :
+    Iec61499PrimitiveDatentypenPubSub(std::string topicName, EPubSubRole role) :
       CDDSPubSub(topicName, role),
-      m_type(new msg::Ros2PrimitiveDatentypenPubSubType()) {}
+      m_type(new msg::Iec61499PrimitiveDatentypenPubSubType()) {}
 
     std::string registerType(DomainParticipant* paParticipant) override;
     bool validateType(const CStringDictionary::TStringId typeId) override;
     bool publish(CIEC_STRUCT* data) override;
     std::optional<std::unique_ptr<CIEC_STRUCT>> receive() override;
 
-    static msg::Ros2PrimitiveDatentypen ciec2dds(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &ciec);
-    static CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen dds2ciec(const msg::Ros2PrimitiveDatentypen &dds);
-
+  static msg::Iec61499PrimitiveDatentypen ciec2dds(const CIEC_Iec61499PrimitiveDatentypen &ciec);
+  static CIEC_Iec61499PrimitiveDatentypen dds2ciec(const msg::Iec61499PrimitiveDatentypen &dds);
 
   private:
     TypeSupport m_type;

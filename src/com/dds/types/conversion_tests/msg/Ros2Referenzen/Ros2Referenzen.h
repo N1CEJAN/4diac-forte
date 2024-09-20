@@ -23,7 +23,7 @@
 #define _FAST_DDS_GENERATED_CONVERSION_TESTS_MSG_ROS2REFERENZEN_H_
 
 // #include "conversion_tests/msg/Ros2PrimitiverDatentyp.h"
-#include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentyp.h"
+#include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypen.h"
 
 #include <fastrtps/utils/fixed_size_string.hpp>
 
@@ -132,101 +132,51 @@ namespace conversion_tests {
              * @param _absolute_reference New value to be copied in member absolute_reference
              */
             eProsima_user_DllExport void absolute_reference(
-                    const conversion_tests::msg::Ros2PrimitiverDatentyp& _absolute_reference);
+                    const conversion_tests::msg::Ros2PrimitiveDatentypen& _absolute_reference);
 
             /*!
              * @brief This function moves the value in member absolute_reference
              * @param _absolute_reference New value to be moved in member absolute_reference
              */
             eProsima_user_DllExport void absolute_reference(
-                    conversion_tests::msg::Ros2PrimitiverDatentyp&& _absolute_reference);
+                    conversion_tests::msg::Ros2PrimitiveDatentypen&& _absolute_reference);
 
             /*!
              * @brief This function returns a constant reference to member absolute_reference
              * @return Constant reference to member absolute_reference
              */
-            eProsima_user_DllExport const conversion_tests::msg::Ros2PrimitiverDatentyp& absolute_reference() const;
+            eProsima_user_DllExport const conversion_tests::msg::Ros2PrimitiveDatentypen& absolute_reference() const;
 
             /*!
              * @brief This function returns a reference to member absolute_reference
              * @return Reference to member absolute_reference
              */
-            eProsima_user_DllExport conversion_tests::msg::Ros2PrimitiverDatentyp& absolute_reference();
-            /*!
-             * @brief This function copies the value in member array_of_absolute_references
-             * @param _array_of_absolute_references New value to be copied in member array_of_absolute_references
-             */
-            eProsima_user_DllExport void array_of_absolute_references(
-                    const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& _array_of_absolute_references);
-
-            /*!
-             * @brief This function moves the value in member array_of_absolute_references
-             * @param _array_of_absolute_references New value to be moved in member array_of_absolute_references
-             */
-            eProsima_user_DllExport void array_of_absolute_references(
-                    std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>&& _array_of_absolute_references);
-
-            /*!
-             * @brief This function returns a constant reference to member array_of_absolute_references
-             * @return Constant reference to member array_of_absolute_references
-             */
-            eProsima_user_DllExport const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& array_of_absolute_references() const;
-
-            /*!
-             * @brief This function returns a reference to member array_of_absolute_references
-             * @return Reference to member array_of_absolute_references
-             */
-            eProsima_user_DllExport std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& array_of_absolute_references();
+            eProsima_user_DllExport conversion_tests::msg::Ros2PrimitiveDatentypen& absolute_reference();
             /*!
              * @brief This function copies the value in member relative_reference
              * @param _relative_reference New value to be copied in member relative_reference
              */
             eProsima_user_DllExport void relative_reference(
-                    const conversion_tests::msg::Ros2PrimitiverDatentyp& _relative_reference);
+                    const conversion_tests::msg::Ros2PrimitiveDatentypen& _relative_reference);
 
             /*!
              * @brief This function moves the value in member relative_reference
              * @param _relative_reference New value to be moved in member relative_reference
              */
             eProsima_user_DllExport void relative_reference(
-                    conversion_tests::msg::Ros2PrimitiverDatentyp&& _relative_reference);
+                    conversion_tests::msg::Ros2PrimitiveDatentypen&& _relative_reference);
 
             /*!
              * @brief This function returns a constant reference to member relative_reference
              * @return Constant reference to member relative_reference
              */
-            eProsima_user_DllExport const conversion_tests::msg::Ros2PrimitiverDatentyp& relative_reference() const;
+            eProsima_user_DllExport const conversion_tests::msg::Ros2PrimitiveDatentypen& relative_reference() const;
 
             /*!
              * @brief This function returns a reference to member relative_reference
              * @return Reference to member relative_reference
              */
-            eProsima_user_DllExport conversion_tests::msg::Ros2PrimitiverDatentyp& relative_reference();
-            /*!
-             * @brief This function copies the value in member array_of_relative_references
-             * @param _array_of_relative_references New value to be copied in member array_of_relative_references
-             */
-            eProsima_user_DllExport void array_of_relative_references(
-                    const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& _array_of_relative_references);
-
-            /*!
-             * @brief This function moves the value in member array_of_relative_references
-             * @param _array_of_relative_references New value to be moved in member array_of_relative_references
-             */
-            eProsima_user_DllExport void array_of_relative_references(
-                    std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>&& _array_of_relative_references);
-
-            /*!
-             * @brief This function returns a constant reference to member array_of_relative_references
-             * @return Constant reference to member array_of_relative_references
-             */
-            eProsima_user_DllExport const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& array_of_relative_references() const;
-
-            /*!
-             * @brief This function returns a reference to member array_of_relative_references
-             * @return Reference to member array_of_relative_references
-             */
-            eProsima_user_DllExport std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& array_of_relative_references();
+            eProsima_user_DllExport conversion_tests::msg::Ros2PrimitiveDatentypen& relative_reference();
 
             /*!
             * @brief This function returns the maximum serialized size of an object
@@ -287,10 +237,8 @@ namespace conversion_tests {
 
         private:
 
-            conversion_tests::msg::Ros2PrimitiverDatentyp m_absolute_reference;
-            std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp> m_array_of_absolute_references;
-            conversion_tests::msg::Ros2PrimitiverDatentyp m_relative_reference;
-            std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp> m_array_of_relative_references;
+            conversion_tests::msg::Ros2PrimitiveDatentypen m_absolute_reference;
+            conversion_tests::msg::Ros2PrimitiveDatentypen m_relative_reference;
 
         };
     } // namespace msg

@@ -23,9 +23,7 @@
 #include "devlog.h"
 #include "forte_struct.h"
 #include "stringlist.h"
-#include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentyp.h"
-#include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentypPubSub.h"
-#include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentypPubSubTypes.h"
+#include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
 #include "types/conversion_tests/msg/Ros2Referenzen/Ros2Referenzen.h"
 
 std::string conversion_tests::Ros2ReferenzenPubSub::registerType(DomainParticipant *paParticipant) {
@@ -43,26 +41,10 @@ bool conversion_tests::Ros2ReferenzenPubSub::publish(CIEC_STRUCT *data) {
     msg::Ros2Referenzen ros2referenzen;
 
     // absolute_reference
-    ros2referenzen.absolute_reference(Ros2PrimitiverDatentypPubSub::ciec2dds(casted->var_relative_reference));
-
-    // array_of_absolute_reference
-    std::vector<msg::Ros2PrimitiverDatentyp> array_of_absolute_references;
-    for (int i = 0; i < 3; ++i) {
-        auto element = Ros2PrimitiverDatentypPubSub::ciec2dds(casted->var_array_of_absolute_references[i]);
-        array_of_absolute_references.push_back(element);
-    }
-    ros2referenzen.array_of_absolute_references(array_of_absolute_references);
+    ros2referenzen.absolute_reference(Ros2PrimitiveDatentypenPubSub::ciec2dds(casted->var_absolute_reference));
 
     // relative_reference
-    ros2referenzen.relative_reference(Ros2PrimitiverDatentypPubSub::ciec2dds(casted->var_relative_reference));
-
-    // array_of_relative_references
-    std::vector<msg::Ros2PrimitiverDatentyp> array_of_relative_references;
-    for (int i = 0; i < 3; ++i) {
-        auto element = Ros2PrimitiverDatentypPubSub::ciec2dds(casted->var_array_of_relative_references[i]);
-        array_of_relative_references.push_back(element);
-    }
-    ros2referenzen.array_of_relative_references(array_of_relative_references);
+    ros2referenzen.relative_reference(Ros2PrimitiveDatentypenPubSub::ciec2dds(casted->var_relative_reference));
 
     return this->write(&ros2referenzen);
 }
@@ -76,22 +58,10 @@ std::optional<std::unique_ptr<CIEC_STRUCT> > conversion_tests::Ros2ReferenzenPub
     auto ciecStruct = std::make_unique<CIEC_ROS2_conversiontests_msg_Ros2Referenzen>();
 
     // absolute_reference
-    ciecStruct->var_absolute_reference = Ros2PrimitiverDatentypPubSub::dds2ciec(ros2referenzen.absolute_reference());
-    // array_of_absolute_references
-    for (size_t i = 0; i < 3; ++i) {
-        ciecStruct->var_array_of_absolute_references[i] = Ros2PrimitiverDatentypPubSub::dds2ciec(
-            ros2referenzen.array_of_absolute_references()[i]
-        );
-    }
+    ciecStruct->var_absolute_reference = Ros2PrimitiveDatentypenPubSub::dds2ciec(ros2referenzen.absolute_reference());
 
     // relative_reference
-    ciecStruct->var_relative_reference = Ros2PrimitiverDatentypPubSub::dds2ciec(ros2referenzen.relative_reference());
-    // array_of_relative_references
-    for (size_t i = 0; i < 3; ++i) {
-        ciecStruct->var_array_of_relative_references[i] = Ros2PrimitiverDatentypPubSub::dds2ciec(
-            ros2referenzen.array_of_relative_references()[i]
-        );
-    }
+    ciecStruct->var_relative_reference = Ros2PrimitiveDatentypenPubSub::dds2ciec(ros2referenzen.relative_reference());
 
     std::unique_ptr<CIEC_STRUCT> ptr = std::move(ciecStruct);
 

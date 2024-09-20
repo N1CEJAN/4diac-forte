@@ -164,82 +164,6 @@ namespace conversion_tests {
             eProsima_user_DllExport uint8_t& a_byte();
 
             /*!
-             * @brief This function sets a value in member an_int8
-             * @param _an_int8 New value for member an_int8
-             */
-            eProsima_user_DllExport void an_int8(
-                    int8_t _an_int8);
-
-            /*!
-             * @brief This function returns the value of member an_int8
-             * @return Value of member an_int8
-             */
-            eProsima_user_DllExport int8_t an_int8() const;
-
-            /*!
-             * @brief This function returns a reference to member an_int8
-             * @return Reference to member an_int8
-             */
-            eProsima_user_DllExport int8_t& an_int8();
-
-            /*!
-             * @brief This function sets a value in member an_int16
-             * @param _an_int16 New value for member an_int16
-             */
-            eProsima_user_DllExport void an_int16(
-                    int16_t _an_int16);
-
-            /*!
-             * @brief This function returns the value of member an_int16
-             * @return Value of member an_int16
-             */
-            eProsima_user_DllExport int16_t an_int16() const;
-
-            /*!
-             * @brief This function returns a reference to member an_int16
-             * @return Reference to member an_int16
-             */
-            eProsima_user_DllExport int16_t& an_int16();
-
-            /*!
-             * @brief This function sets a value in member an_int32
-             * @param _an_int32 New value for member an_int32
-             */
-            eProsima_user_DllExport void an_int32(
-                    int32_t _an_int32);
-
-            /*!
-             * @brief This function returns the value of member an_int32
-             * @return Value of member an_int32
-             */
-            eProsima_user_DllExport int32_t an_int32() const;
-
-            /*!
-             * @brief This function returns a reference to member an_int32
-             * @return Reference to member an_int32
-             */
-            eProsima_user_DllExport int32_t& an_int32();
-
-            /*!
-             * @brief This function sets a value in member an_int64
-             * @param _an_int64 New value for member an_int64
-             */
-            eProsima_user_DllExport void an_int64(
-                    int64_t _an_int64);
-
-            /*!
-             * @brief This function returns the value of member an_int64
-             * @return Value of member an_int64
-             */
-            eProsima_user_DllExport int64_t an_int64() const;
-
-            /*!
-             * @brief This function returns a reference to member an_int64
-             * @return Reference to member an_int64
-             */
-            eProsima_user_DllExport int64_t& an_int64();
-
-            /*!
              * @brief This function sets a value in member a_uint8
              * @param _a_uint8 New value for member a_uint8
              */
@@ -314,6 +238,82 @@ namespace conversion_tests {
              * @return Reference to member a_uint64
              */
             eProsima_user_DllExport uint64_t& a_uint64();
+
+            /*!
+             * @brief This function sets a value in member a_int8
+             * @param _a_int8 New value for member a_int8
+             */
+            eProsima_user_DllExport void a_int8(
+                    int8_t _a_int8);
+
+            /*!
+             * @brief This function returns the value of member a_int8
+             * @return Value of member a_int8
+             */
+            eProsima_user_DllExport int8_t a_int8() const;
+
+            /*!
+             * @brief This function returns a reference to member a_int8
+             * @return Reference to member a_int8
+             */
+            eProsima_user_DllExport int8_t& a_int8();
+
+            /*!
+             * @brief This function sets a value in member a_int16
+             * @param _a_int16 New value for member a_int16
+             */
+            eProsima_user_DllExport void a_int16(
+                    int16_t _a_int16);
+
+            /*!
+             * @brief This function returns the value of member a_int16
+             * @return Value of member a_int16
+             */
+            eProsima_user_DllExport int16_t a_int16() const;
+
+            /*!
+             * @brief This function returns a reference to member a_int16
+             * @return Reference to member a_int16
+             */
+            eProsima_user_DllExport int16_t& a_int16();
+
+            /*!
+             * @brief This function sets a value in member a_int32
+             * @param _a_int32 New value for member a_int32
+             */
+            eProsima_user_DllExport void a_int32(
+                    int32_t _a_int32);
+
+            /*!
+             * @brief This function returns the value of member a_int32
+             * @return Value of member a_int32
+             */
+            eProsima_user_DllExport int32_t a_int32() const;
+
+            /*!
+             * @brief This function returns a reference to member a_int32
+             * @return Reference to member a_int32
+             */
+            eProsima_user_DllExport int32_t& a_int32();
+
+            /*!
+             * @brief This function sets a value in member a_int64
+             * @param _a_int64 New value for member a_int64
+             */
+            eProsima_user_DllExport void a_int64(
+                    int64_t _a_int64);
+
+            /*!
+             * @brief This function returns the value of member a_int64
+             * @return Value of member a_int64
+             */
+            eProsima_user_DllExport int64_t a_int64() const;
+
+            /*!
+             * @brief This function returns a reference to member a_int64
+             * @return Reference to member a_int64
+             */
+            eProsima_user_DllExport int64_t& a_int64();
 
             /*!
              * @brief This function sets a value in member a_float32
@@ -534,14 +534,14 @@ namespace conversion_tests {
 
             bool m_a_bool;
             uint8_t m_a_byte;
-            int8_t m_an_int8;
-            int16_t m_an_int16;
-            int32_t m_an_int32;
-            int64_t m_an_int64;
             uint8_t m_a_uint8;
             uint16_t m_a_uint16;
             uint32_t m_a_uint32;
             uint64_t m_a_uint64;
+            int8_t m_a_int8;
+            int16_t m_a_int16;
+            int32_t m_a_int32;
+            int64_t m_a_int64;
             float m_a_float32;
             double m_a_float64;
             uint8_t m_a_char;
