@@ -12,7 +12,7 @@
 
 #include "forte_struct.h"
 
-#include "ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp.h"
+#include "ROS2_conversiontests_msg_Ros2PrimitiverDatentyp_dtp.h"
 #include "iec61131_functions.h"
 #include "forte_array_common.h"
 #include "forte_array.h"
@@ -26,13 +26,15 @@ class CIEC_ROS2_conversiontests_msg_Ros2Referenzen final : public CIEC_STRUCT {
   public:
     CIEC_ROS2_conversiontests_msg_Ros2Referenzen();
 
-    CIEC_ROS2_conversiontests_msg_Ros2Referenzen(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &paabsolute_reference, const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &parelative_reference);
+    CIEC_ROS2_conversiontests_msg_Ros2Referenzen(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp &paabsolute_reference, const CIEC_ARRAY_COMMON<CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp> &paarray_of_absolute_references, const CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp &parelative_reference, const CIEC_ARRAY_COMMON<CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp> &paarray_of_relative_references);
 
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_absolute_reference;
-    CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen var_relative_reference;
+    CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp var_absolute_reference;
+    CIEC_ARRAY_FIXED<CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp, 0, 2> var_array_of_absolute_references;
+    CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp var_relative_reference;
+    CIEC_ARRAY_FIXED<CIEC_ROS2_conversiontests_msg_Ros2PrimitiverDatentyp, 0, 2> var_array_of_relative_references;
 
     size_t getStructSize() const override {
-      return 2;
+      return 4;
     }
 
     const CStringDictionary::TStringId* elementNames() const override {

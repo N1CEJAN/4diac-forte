@@ -43,6 +43,14 @@ conversion_tests::msg::Ros2PrimitiveDatentypen::Ros2PrimitiveDatentypen()
     m_a_bool = false;
     // octet m_a_byte
     m_a_byte = 0;
+    // int8 m_an_int8
+    m_an_int8 = 0;
+    // short m_an_int16
+    m_an_int16 = 0;
+    // long m_an_int32
+    m_an_int32 = 0;
+    // long long m_an_int64
+    m_an_int64 = 0;
     // uint8 m_a_uint8
     m_a_uint8 = 0;
     // unsigned short m_a_uint16
@@ -51,14 +59,6 @@ conversion_tests::msg::Ros2PrimitiveDatentypen::Ros2PrimitiveDatentypen()
     m_a_uint32 = 0;
     // unsigned long long m_a_uint64
     m_a_uint64 = 0;
-    // int8 m_a_int8
-    m_a_int8 = 0;
-    // short m_a_int16
-    m_a_int16 = 0;
-    // long m_a_int32
-    m_a_int32 = 0;
-    // long long m_a_int64
-    m_a_int64 = 0;
     // float m_a_float32
     m_a_float32 = 0.0;
     // double m_a_float64
@@ -102,14 +102,14 @@ conversion_tests::msg::Ros2PrimitiveDatentypen::Ros2PrimitiveDatentypen(
 {
     m_a_bool = x.m_a_bool;
     m_a_byte = x.m_a_byte;
+    m_an_int8 = x.m_an_int8;
+    m_an_int16 = x.m_an_int16;
+    m_an_int32 = x.m_an_int32;
+    m_an_int64 = x.m_an_int64;
     m_a_uint8 = x.m_a_uint8;
     m_a_uint16 = x.m_a_uint16;
     m_a_uint32 = x.m_a_uint32;
     m_a_uint64 = x.m_a_uint64;
-    m_a_int8 = x.m_a_int8;
-    m_a_int16 = x.m_a_int16;
-    m_a_int32 = x.m_a_int32;
-    m_a_int64 = x.m_a_int64;
     m_a_float32 = x.m_a_float32;
     m_a_float64 = x.m_a_float64;
     m_a_char = x.m_a_char;
@@ -124,14 +124,14 @@ conversion_tests::msg::Ros2PrimitiveDatentypen::Ros2PrimitiveDatentypen(
 {
     m_a_bool = x.m_a_bool;
     m_a_byte = x.m_a_byte;
+    m_an_int8 = x.m_an_int8;
+    m_an_int16 = x.m_an_int16;
+    m_an_int32 = x.m_an_int32;
+    m_an_int64 = x.m_an_int64;
     m_a_uint8 = x.m_a_uint8;
     m_a_uint16 = x.m_a_uint16;
     m_a_uint32 = x.m_a_uint32;
     m_a_uint64 = x.m_a_uint64;
-    m_a_int8 = x.m_a_int8;
-    m_a_int16 = x.m_a_int16;
-    m_a_int32 = x.m_a_int32;
-    m_a_int64 = x.m_a_int64;
     m_a_float32 = x.m_a_float32;
     m_a_float64 = x.m_a_float64;
     m_a_char = x.m_a_char;
@@ -147,14 +147,14 @@ conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Primi
 
     m_a_bool = x.m_a_bool;
     m_a_byte = x.m_a_byte;
+    m_an_int8 = x.m_an_int8;
+    m_an_int16 = x.m_an_int16;
+    m_an_int32 = x.m_an_int32;
+    m_an_int64 = x.m_an_int64;
     m_a_uint8 = x.m_a_uint8;
     m_a_uint16 = x.m_a_uint16;
     m_a_uint32 = x.m_a_uint32;
     m_a_uint64 = x.m_a_uint64;
-    m_a_int8 = x.m_a_int8;
-    m_a_int16 = x.m_a_int16;
-    m_a_int32 = x.m_a_int32;
-    m_a_int64 = x.m_a_int64;
     m_a_float32 = x.m_a_float32;
     m_a_float64 = x.m_a_float64;
     m_a_char = x.m_a_char;
@@ -172,14 +172,14 @@ conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Primi
 
     m_a_bool = x.m_a_bool;
     m_a_byte = x.m_a_byte;
+    m_an_int8 = x.m_an_int8;
+    m_an_int16 = x.m_an_int16;
+    m_an_int32 = x.m_an_int32;
+    m_an_int64 = x.m_an_int64;
     m_a_uint8 = x.m_a_uint8;
     m_a_uint16 = x.m_a_uint16;
     m_a_uint32 = x.m_a_uint32;
     m_a_uint64 = x.m_a_uint64;
-    m_a_int8 = x.m_a_int8;
-    m_a_int16 = x.m_a_int16;
-    m_a_int32 = x.m_a_int32;
-    m_a_int64 = x.m_a_int64;
     m_a_float32 = x.m_a_float32;
     m_a_float64 = x.m_a_float64;
     m_a_char = x.m_a_char;
@@ -195,7 +195,7 @@ bool conversion_tests::msg::Ros2PrimitiveDatentypen::operator ==(
         const Ros2PrimitiveDatentypen& x) const
 {
 
-    return (m_a_bool == x.m_a_bool && m_a_byte == x.m_a_byte && m_a_uint8 == x.m_a_uint8 && m_a_uint16 == x.m_a_uint16 && m_a_uint32 == x.m_a_uint32 && m_a_uint64 == x.m_a_uint64 && m_a_int8 == x.m_a_int8 && m_a_int16 == x.m_a_int16 && m_a_int32 == x.m_a_int32 && m_a_int64 == x.m_a_int64 && m_a_float32 == x.m_a_float32 && m_a_float64 == x.m_a_float64 && m_a_char == x.m_a_char && m_a_string == x.m_a_string && m_a_bound_string == x.m_a_bound_string && m_a_wstring == x.m_a_wstring && m_a_bound_wstring == x.m_a_bound_wstring);
+    return (m_a_bool == x.m_a_bool && m_a_byte == x.m_a_byte && m_an_int8 == x.m_an_int8 && m_an_int16 == x.m_an_int16 && m_an_int32 == x.m_an_int32 && m_an_int64 == x.m_an_int64 && m_a_uint8 == x.m_a_uint8 && m_a_uint16 == x.m_a_uint16 && m_a_uint32 == x.m_a_uint32 && m_a_uint64 == x.m_a_uint64 && m_a_float32 == x.m_a_float32 && m_a_float64 == x.m_a_float64 && m_a_char == x.m_a_char && m_a_string == x.m_a_string && m_a_bound_string == x.m_a_bound_string && m_a_wstring == x.m_a_wstring && m_a_bound_wstring == x.m_a_bound_wstring);
 }
 
 bool conversion_tests::msg::Ros2PrimitiveDatentypen::operator !=(
@@ -276,14 +276,14 @@ void conversion_tests::msg::Ros2PrimitiveDatentypen::serialize(
 
     scdr << m_a_bool;
     scdr << m_a_byte;
+    scdr << m_an_int8;
+    scdr << m_an_int16;
+    scdr << m_an_int32;
+    scdr << m_an_int64;
     scdr << m_a_uint8;
     scdr << m_a_uint16;
     scdr << m_a_uint32;
     scdr << m_a_uint64;
-    scdr << m_a_int8;
-    scdr << m_a_int16;
-    scdr << m_a_int32;
-    scdr << m_a_int64;
     scdr << m_a_float32;
     scdr << m_a_float64;
     scdr << m_a_char;
@@ -300,14 +300,14 @@ void conversion_tests::msg::Ros2PrimitiveDatentypen::deserialize(
 
     dcdr >> m_a_bool;
     dcdr >> m_a_byte;
+    dcdr >> m_an_int8;
+    dcdr >> m_an_int16;
+    dcdr >> m_an_int32;
+    dcdr >> m_an_int64;
     dcdr >> m_a_uint8;
     dcdr >> m_a_uint16;
     dcdr >> m_a_uint32;
     dcdr >> m_a_uint64;
-    dcdr >> m_a_int8;
-    dcdr >> m_a_int16;
-    dcdr >> m_a_int32;
-    dcdr >> m_a_int64;
     dcdr >> m_a_float32;
     dcdr >> m_a_float64;
     dcdr >> m_a_char;
@@ -375,6 +375,118 @@ uint8_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_byte() const
 uint8_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_byte()
 {
     return m_a_byte;
+}
+
+/*!
+ * @brief This function sets a value in member an_int8
+ * @param _an_int8 New value for member an_int8
+ */
+void conversion_tests::msg::Ros2PrimitiveDatentypen::an_int8(
+        int8_t _an_int8)
+{
+    m_an_int8 = _an_int8;
+}
+
+/*!
+ * @brief This function returns the value of member an_int8
+ * @return Value of member an_int8
+ */
+int8_t conversion_tests::msg::Ros2PrimitiveDatentypen::an_int8() const
+{
+    return m_an_int8;
+}
+
+/*!
+ * @brief This function returns a reference to member an_int8
+ * @return Reference to member an_int8
+ */
+int8_t& conversion_tests::msg::Ros2PrimitiveDatentypen::an_int8()
+{
+    return m_an_int8;
+}
+
+/*!
+ * @brief This function sets a value in member an_int16
+ * @param _an_int16 New value for member an_int16
+ */
+void conversion_tests::msg::Ros2PrimitiveDatentypen::an_int16(
+        int16_t _an_int16)
+{
+    m_an_int16 = _an_int16;
+}
+
+/*!
+ * @brief This function returns the value of member an_int16
+ * @return Value of member an_int16
+ */
+int16_t conversion_tests::msg::Ros2PrimitiveDatentypen::an_int16() const
+{
+    return m_an_int16;
+}
+
+/*!
+ * @brief This function returns a reference to member an_int16
+ * @return Reference to member an_int16
+ */
+int16_t& conversion_tests::msg::Ros2PrimitiveDatentypen::an_int16()
+{
+    return m_an_int16;
+}
+
+/*!
+ * @brief This function sets a value in member an_int32
+ * @param _an_int32 New value for member an_int32
+ */
+void conversion_tests::msg::Ros2PrimitiveDatentypen::an_int32(
+        int32_t _an_int32)
+{
+    m_an_int32 = _an_int32;
+}
+
+/*!
+ * @brief This function returns the value of member an_int32
+ * @return Value of member an_int32
+ */
+int32_t conversion_tests::msg::Ros2PrimitiveDatentypen::an_int32() const
+{
+    return m_an_int32;
+}
+
+/*!
+ * @brief This function returns a reference to member an_int32
+ * @return Reference to member an_int32
+ */
+int32_t& conversion_tests::msg::Ros2PrimitiveDatentypen::an_int32()
+{
+    return m_an_int32;
+}
+
+/*!
+ * @brief This function sets a value in member an_int64
+ * @param _an_int64 New value for member an_int64
+ */
+void conversion_tests::msg::Ros2PrimitiveDatentypen::an_int64(
+        int64_t _an_int64)
+{
+    m_an_int64 = _an_int64;
+}
+
+/*!
+ * @brief This function returns the value of member an_int64
+ * @return Value of member an_int64
+ */
+int64_t conversion_tests::msg::Ros2PrimitiveDatentypen::an_int64() const
+{
+    return m_an_int64;
+}
+
+/*!
+ * @brief This function returns a reference to member an_int64
+ * @return Reference to member an_int64
+ */
+int64_t& conversion_tests::msg::Ros2PrimitiveDatentypen::an_int64()
+{
+    return m_an_int64;
 }
 
 /*!
@@ -487,118 +599,6 @@ uint64_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_uint64() const
 uint64_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_uint64()
 {
     return m_a_uint64;
-}
-
-/*!
- * @brief This function sets a value in member a_int8
- * @param _a_int8 New value for member a_int8
- */
-void conversion_tests::msg::Ros2PrimitiveDatentypen::a_int8(
-        int8_t _a_int8)
-{
-    m_a_int8 = _a_int8;
-}
-
-/*!
- * @brief This function returns the value of member a_int8
- * @return Value of member a_int8
- */
-int8_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_int8() const
-{
-    return m_a_int8;
-}
-
-/*!
- * @brief This function returns a reference to member a_int8
- * @return Reference to member a_int8
- */
-int8_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_int8()
-{
-    return m_a_int8;
-}
-
-/*!
- * @brief This function sets a value in member a_int16
- * @param _a_int16 New value for member a_int16
- */
-void conversion_tests::msg::Ros2PrimitiveDatentypen::a_int16(
-        int16_t _a_int16)
-{
-    m_a_int16 = _a_int16;
-}
-
-/*!
- * @brief This function returns the value of member a_int16
- * @return Value of member a_int16
- */
-int16_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_int16() const
-{
-    return m_a_int16;
-}
-
-/*!
- * @brief This function returns a reference to member a_int16
- * @return Reference to member a_int16
- */
-int16_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_int16()
-{
-    return m_a_int16;
-}
-
-/*!
- * @brief This function sets a value in member a_int32
- * @param _a_int32 New value for member a_int32
- */
-void conversion_tests::msg::Ros2PrimitiveDatentypen::a_int32(
-        int32_t _a_int32)
-{
-    m_a_int32 = _a_int32;
-}
-
-/*!
- * @brief This function returns the value of member a_int32
- * @return Value of member a_int32
- */
-int32_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_int32() const
-{
-    return m_a_int32;
-}
-
-/*!
- * @brief This function returns a reference to member a_int32
- * @return Reference to member a_int32
- */
-int32_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_int32()
-{
-    return m_a_int32;
-}
-
-/*!
- * @brief This function sets a value in member a_int64
- * @param _a_int64 New value for member a_int64
- */
-void conversion_tests::msg::Ros2PrimitiveDatentypen::a_int64(
-        int64_t _a_int64)
-{
-    m_a_int64 = _a_int64;
-}
-
-/*!
- * @brief This function returns the value of member a_int64
- * @return Value of member a_int64
- */
-int64_t conversion_tests::msg::Ros2PrimitiveDatentypen::a_int64() const
-{
-    return m_a_int64;
-}
-
-/*!
- * @brief This function returns a reference to member a_int64
- * @return Reference to member a_int64
- */
-int64_t& conversion_tests::msg::Ros2PrimitiveDatentypen::a_int64()
-{
-    return m_a_int64;
 }
 
 /*!

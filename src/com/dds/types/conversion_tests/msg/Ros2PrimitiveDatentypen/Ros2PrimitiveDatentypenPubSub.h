@@ -18,8 +18,6 @@
 
 #include <memory>
 
-#include "conversion_tests/msg/ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp.h"
-
 
 namespace conversion_tests {
 
@@ -33,10 +31,6 @@ class Ros2PrimitiveDatentypenPubSub : public CDDSPubSub {
     bool validateType(const CStringDictionary::TStringId typeId) override;
     bool publish(CIEC_STRUCT* data) override;
     std::optional<std::unique_ptr<CIEC_STRUCT>> receive() override;
-
-    static msg::Ros2PrimitiveDatentypen ciec2dds(const CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen &ciec);
-    static CIEC_ROS2_conversiontests_msg_Ros2PrimitiveDatentypen dds2ciec(const msg::Ros2PrimitiveDatentypen &dds);
-
 
   private:
     TypeSupport m_type;

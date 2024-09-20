@@ -34,16 +34,20 @@ using namespace eprosima::fastcdr::exception;
 
 #include <utility>
 
-#define conversion_tests_msg_Ros2Referenzen_max_cdr_typesize 2724ULL;
-#define conversion_tests_msg_Ros2PrimitiveDatentypen_max_cdr_typesize 1364ULL;
+#define conversion_tests_msg_Ros2Referenzen_max_cdr_typesize 216ULL;
+#define conversion_tests_msg_Ros2PrimitiverDatentyp_max_cdr_typesize 1ULL;
 #define conversion_tests_msg_Ros2Referenzen_max_key_cdr_typesize 0ULL;
-#define conversion_tests_msg_Ros2PrimitiveDatentypen_max_key_cdr_typesize 0ULL;
+#define conversion_tests_msg_Ros2PrimitiverDatentyp_max_key_cdr_typesize 0ULL;
 
 conversion_tests::msg::Ros2Referenzen::Ros2Referenzen()
 {
-    // conversion_tests::msg::Ros2PrimitiveDatentypen m_absolute_reference
+    // conversion_tests::msg::Ros2PrimitiverDatentyp m_absolute_reference
 
-    // conversion_tests::msg::Ros2PrimitiveDatentypen m_relative_reference
+    // sequence<conversion_tests::msg::Ros2PrimitiverDatentyp> m_array_of_absolute_references
+
+    // conversion_tests::msg::Ros2PrimitiverDatentyp m_relative_reference
+
+    // sequence<conversion_tests::msg::Ros2PrimitiverDatentyp> m_array_of_relative_references
 
 
 }
@@ -52,20 +56,26 @@ conversion_tests::msg::Ros2Referenzen::~Ros2Referenzen()
 {
 
 
+
+
 }
 
 conversion_tests::msg::Ros2Referenzen::Ros2Referenzen(
         const Ros2Referenzen& x)
 {
     m_absolute_reference = x.m_absolute_reference;
+    m_array_of_absolute_references = x.m_array_of_absolute_references;
     m_relative_reference = x.m_relative_reference;
+    m_array_of_relative_references = x.m_array_of_relative_references;
 }
 
 conversion_tests::msg::Ros2Referenzen::Ros2Referenzen(
         Ros2Referenzen&& x) noexcept 
 {
     m_absolute_reference = std::move(x.m_absolute_reference);
+    m_array_of_absolute_references = std::move(x.m_array_of_absolute_references);
     m_relative_reference = std::move(x.m_relative_reference);
+    m_array_of_relative_references = std::move(x.m_array_of_relative_references);
 }
 
 conversion_tests::msg::Ros2Referenzen& conversion_tests::msg::Ros2Referenzen::operator =(
@@ -73,7 +83,9 @@ conversion_tests::msg::Ros2Referenzen& conversion_tests::msg::Ros2Referenzen::op
 {
 
     m_absolute_reference = x.m_absolute_reference;
+    m_array_of_absolute_references = x.m_array_of_absolute_references;
     m_relative_reference = x.m_relative_reference;
+    m_array_of_relative_references = x.m_array_of_relative_references;
 
     return *this;
 }
@@ -83,7 +95,9 @@ conversion_tests::msg::Ros2Referenzen& conversion_tests::msg::Ros2Referenzen::op
 {
 
     m_absolute_reference = std::move(x.m_absolute_reference);
+    m_array_of_absolute_references = std::move(x.m_array_of_absolute_references);
     m_relative_reference = std::move(x.m_relative_reference);
+    m_array_of_relative_references = std::move(x.m_array_of_relative_references);
 
     return *this;
 }
@@ -92,7 +106,7 @@ bool conversion_tests::msg::Ros2Referenzen::operator ==(
         const Ros2Referenzen& x) const
 {
 
-    return (m_absolute_reference == x.m_absolute_reference && m_relative_reference == x.m_relative_reference);
+    return (m_absolute_reference == x.m_absolute_reference && m_array_of_absolute_references == x.m_array_of_absolute_references && m_relative_reference == x.m_relative_reference && m_array_of_relative_references == x.m_array_of_relative_references);
 }
 
 bool conversion_tests::msg::Ros2Referenzen::operator !=(
@@ -116,8 +130,22 @@ size_t conversion_tests::msg::Ros2Referenzen::getCdrSerializedSize(
     size_t initial_alignment = current_alignment;
 
 
-    current_alignment += conversion_tests::msg::Ros2PrimitiveDatentypen::getCdrSerializedSize(data.absolute_reference(), current_alignment);
-    current_alignment += conversion_tests::msg::Ros2PrimitiveDatentypen::getCdrSerializedSize(data.relative_reference(), current_alignment);
+    current_alignment += conversion_tests::msg::Ros2PrimitiverDatentyp::getCdrSerializedSize(data.absolute_reference(), current_alignment);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    for(size_t a = 0; a < data.array_of_absolute_references().size(); ++a)
+    {
+        current_alignment += conversion_tests::msg::Ros2PrimitiverDatentyp::getCdrSerializedSize(data.array_of_absolute_references().at(a), current_alignment);}
+
+    current_alignment += conversion_tests::msg::Ros2PrimitiverDatentyp::getCdrSerializedSize(data.relative_reference(), current_alignment);
+    current_alignment += 4 + eprosima::fastcdr::Cdr::alignment(current_alignment, 4);
+
+
+    for(size_t a = 0; a < data.array_of_relative_references().size(); ++a)
+    {
+        current_alignment += conversion_tests::msg::Ros2PrimitiverDatentyp::getCdrSerializedSize(data.array_of_relative_references().at(a), current_alignment);}
+
 
     return current_alignment - initial_alignment;
 }
@@ -127,7 +155,9 @@ void conversion_tests::msg::Ros2Referenzen::serialize(
 {
 
     scdr << m_absolute_reference;
+    scdr << m_array_of_absolute_references;
     scdr << m_relative_reference;
+    scdr << m_array_of_relative_references;
 
 }
 
@@ -136,7 +166,9 @@ void conversion_tests::msg::Ros2Referenzen::deserialize(
 {
 
     dcdr >> m_absolute_reference;
+    dcdr >> m_array_of_absolute_references;
     dcdr >> m_relative_reference;
+    dcdr >> m_array_of_relative_references;
 }
 
 /*!
@@ -144,7 +176,7 @@ void conversion_tests::msg::Ros2Referenzen::deserialize(
  * @param _absolute_reference New value to be copied in member absolute_reference
  */
 void conversion_tests::msg::Ros2Referenzen::absolute_reference(
-        const conversion_tests::msg::Ros2PrimitiveDatentypen& _absolute_reference)
+        const conversion_tests::msg::Ros2PrimitiverDatentyp& _absolute_reference)
 {
     m_absolute_reference = _absolute_reference;
 }
@@ -154,7 +186,7 @@ void conversion_tests::msg::Ros2Referenzen::absolute_reference(
  * @param _absolute_reference New value to be moved in member absolute_reference
  */
 void conversion_tests::msg::Ros2Referenzen::absolute_reference(
-        conversion_tests::msg::Ros2PrimitiveDatentypen&& _absolute_reference)
+        conversion_tests::msg::Ros2PrimitiverDatentyp&& _absolute_reference)
 {
     m_absolute_reference = std::move(_absolute_reference);
 }
@@ -163,7 +195,7 @@ void conversion_tests::msg::Ros2Referenzen::absolute_reference(
  * @brief This function returns a constant reference to member absolute_reference
  * @return Constant reference to member absolute_reference
  */
-const conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Referenzen::absolute_reference() const
+const conversion_tests::msg::Ros2PrimitiverDatentyp& conversion_tests::msg::Ros2Referenzen::absolute_reference() const
 {
     return m_absolute_reference;
 }
@@ -172,16 +204,53 @@ const conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros
  * @brief This function returns a reference to member absolute_reference
  * @return Reference to member absolute_reference
  */
-conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Referenzen::absolute_reference()
+conversion_tests::msg::Ros2PrimitiverDatentyp& conversion_tests::msg::Ros2Referenzen::absolute_reference()
 {
     return m_absolute_reference;
+}
+/*!
+ * @brief This function copies the value in member array_of_absolute_references
+ * @param _array_of_absolute_references New value to be copied in member array_of_absolute_references
+ */
+void conversion_tests::msg::Ros2Referenzen::array_of_absolute_references(
+        const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& _array_of_absolute_references)
+{
+    m_array_of_absolute_references = _array_of_absolute_references;
+}
+
+/*!
+ * @brief This function moves the value in member array_of_absolute_references
+ * @param _array_of_absolute_references New value to be moved in member array_of_absolute_references
+ */
+void conversion_tests::msg::Ros2Referenzen::array_of_absolute_references(
+        std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>&& _array_of_absolute_references)
+{
+    m_array_of_absolute_references = std::move(_array_of_absolute_references);
+}
+
+/*!
+ * @brief This function returns a constant reference to member array_of_absolute_references
+ * @return Constant reference to member array_of_absolute_references
+ */
+const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& conversion_tests::msg::Ros2Referenzen::array_of_absolute_references() const
+{
+    return m_array_of_absolute_references;
+}
+
+/*!
+ * @brief This function returns a reference to member array_of_absolute_references
+ * @return Reference to member array_of_absolute_references
+ */
+std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& conversion_tests::msg::Ros2Referenzen::array_of_absolute_references()
+{
+    return m_array_of_absolute_references;
 }
 /*!
  * @brief This function copies the value in member relative_reference
  * @param _relative_reference New value to be copied in member relative_reference
  */
 void conversion_tests::msg::Ros2Referenzen::relative_reference(
-        const conversion_tests::msg::Ros2PrimitiveDatentypen& _relative_reference)
+        const conversion_tests::msg::Ros2PrimitiverDatentyp& _relative_reference)
 {
     m_relative_reference = _relative_reference;
 }
@@ -191,7 +260,7 @@ void conversion_tests::msg::Ros2Referenzen::relative_reference(
  * @param _relative_reference New value to be moved in member relative_reference
  */
 void conversion_tests::msg::Ros2Referenzen::relative_reference(
-        conversion_tests::msg::Ros2PrimitiveDatentypen&& _relative_reference)
+        conversion_tests::msg::Ros2PrimitiverDatentyp&& _relative_reference)
 {
     m_relative_reference = std::move(_relative_reference);
 }
@@ -200,7 +269,7 @@ void conversion_tests::msg::Ros2Referenzen::relative_reference(
  * @brief This function returns a constant reference to member relative_reference
  * @return Constant reference to member relative_reference
  */
-const conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Referenzen::relative_reference() const
+const conversion_tests::msg::Ros2PrimitiverDatentyp& conversion_tests::msg::Ros2Referenzen::relative_reference() const
 {
     return m_relative_reference;
 }
@@ -209,9 +278,46 @@ const conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros
  * @brief This function returns a reference to member relative_reference
  * @return Reference to member relative_reference
  */
-conversion_tests::msg::Ros2PrimitiveDatentypen& conversion_tests::msg::Ros2Referenzen::relative_reference()
+conversion_tests::msg::Ros2PrimitiverDatentyp& conversion_tests::msg::Ros2Referenzen::relative_reference()
 {
     return m_relative_reference;
+}
+/*!
+ * @brief This function copies the value in member array_of_relative_references
+ * @param _array_of_relative_references New value to be copied in member array_of_relative_references
+ */
+void conversion_tests::msg::Ros2Referenzen::array_of_relative_references(
+        const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& _array_of_relative_references)
+{
+    m_array_of_relative_references = _array_of_relative_references;
+}
+
+/*!
+ * @brief This function moves the value in member array_of_relative_references
+ * @param _array_of_relative_references New value to be moved in member array_of_relative_references
+ */
+void conversion_tests::msg::Ros2Referenzen::array_of_relative_references(
+        std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>&& _array_of_relative_references)
+{
+    m_array_of_relative_references = std::move(_array_of_relative_references);
+}
+
+/*!
+ * @brief This function returns a constant reference to member array_of_relative_references
+ * @return Constant reference to member array_of_relative_references
+ */
+const std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& conversion_tests::msg::Ros2Referenzen::array_of_relative_references() const
+{
+    return m_array_of_relative_references;
+}
+
+/*!
+ * @brief This function returns a reference to member array_of_relative_references
+ * @return Reference to member array_of_relative_references
+ */
+std::vector<conversion_tests::msg::Ros2PrimitiverDatentyp>& conversion_tests::msg::Ros2Referenzen::array_of_relative_references()
+{
+    return m_array_of_relative_references;
 }
 
 
