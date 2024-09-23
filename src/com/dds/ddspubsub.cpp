@@ -22,6 +22,7 @@
 #include "types/example_message/msg/StringDebug/StringDebugPubSub.h"
 
 #include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
+#include "types/conversion_tests/msg/Ros2Referenzen/Ros2ReferenzenPubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -207,6 +208,9 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
   if (pa_sTopicType == "conversion_tests::msg::Ros2PrimitiveDatentypen")
     return new conversion_tests::Ros2PrimitiveDatentypenPubSub(pa_sTopicName,
                                                                pa_enPubSubRole);
+  if (pa_sTopicType == "conversion_tests::msg::Ros2Referenzen")
+    return new conversion_tests::Ros2ReferenzenPubSub(pa_sTopicName,
+                                                      pa_enPubSubRole);
 
   return nullptr;
 }
