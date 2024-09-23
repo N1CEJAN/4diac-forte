@@ -24,6 +24,7 @@
 #include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
 #include "types/conversion_tests/msg/Ros2Referenzen/Ros2ReferenzenPubSub.h"
 #include "types/conversion_tests/msg/Ros2Arrayspezifikationen1/Ros2Arrayspezifikationen1PubSub.h"
+#include "types/conversion_tests/msg/Iec61499PrimitiveDatentypen/Iec61499PrimitiveDatentypenPubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -215,6 +216,9 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
   if (pa_sTopicType == "conversion_tests::msg::Ros2Arrayspezifikationen1")
     return new conversion_tests::Ros2Arrayspezifikationen1PubSub(pa_sTopicName,
                                                                  pa_enPubSubRole);
+  if (pa_sTopicType == "conversion_tests::msg::Iec61499PrimitiveDatentypen")
+    return new conversion_tests::Iec61499PrimitiveDatentypenPubSub(pa_sTopicName,
+                                                                   pa_enPubSubRole);
 
   return nullptr;
 }
