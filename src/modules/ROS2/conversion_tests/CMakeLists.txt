@@ -13,14 +13,6 @@
 # *******************************************************************************/
 
 
-forte_add_sourcefile_hcpp(
-        msg/ROS2_conversion_tests__msg__Ros2Primitives_dtp
-        msg/ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp
-        msg/ROS2_conversiontests_msg_Ros2Arrayspezifikationen_dtp
-        msg/ROS2_conversiontests_msg_Ros2Arrayspezifikationen2_dtp
-        msg/ROS2_conversiontests_msg_Ros2PrimitiverDatentyp_dtp
-        msg/ROS2_conversiontests_msg_Ros2Referenzen_dtp
-        msg/ROS2_conversiontests_msg_Ros2DynamischesArray1_dtp
-        msg/ROS2_conversiontests_msg_Ros2DynamischesArray2_dtp
-        msg/Iec61499Bitstrings_dtp
-)
+#forte_add_sourcefile_hcpp(
+#        msg/ROS2_conversion_tests__msg__Ros2Primitives_dtp
+#)

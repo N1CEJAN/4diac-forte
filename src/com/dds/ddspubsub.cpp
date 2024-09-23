@@ -20,15 +20,7 @@
 #include "types/action_msgs/srv/CancelGoal/CancelGoalResponsePubSub.h"
 
 #include "types/example_message/msg/StringDebug/StringDebugPubSub.h"
-#include "types/conversion_tests/msg/Ros2Primitives/Ros2PrimitivesPubSub.h"
-#include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
-#include "types/conversion_tests/msg/Ros2Arrayspezifikationen/Ros2ArrayspezifikationenPubSub.h"
-#include "types/conversion_tests/msg/Ros2Arrayspezifikationen2/Ros2Arrayspezifikationen2PubSub.h"
-#include "types/conversion_tests/msg/Ros2PrimitiverDatentyp/Ros2PrimitiverDatentypPubSub.h"
-#include "types/conversion_tests/msg/Ros2Referenzen/Ros2ReferenzenPubSub.h"
-#include "types/conversion_tests/msg/Ros2DynamischesArray1/Ros2DynamischesArray1PubSub.h"
-#include "types/conversion_tests/msg/Ros2DynamischesArray2/Ros2DynamischesArray2PubSub.h"
-#include "types/conversion_tests/msg/Iec61499Bitstrings/Iec61499BitstringsPubSub.h"
+// #include "types/conversion_tests/msg/Ros2Primitives/Ros2PrimitivesPubSub.h"
 
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackMessagePubSub.h"
 #include "types/turtlesim/action/RotateAbsolute/RotateAbsoluteFeedbackPubSub.h"
@@ -210,42 +202,10 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
     return new example_interfaces::AddTwoIntsResponsePubSub(pa_sTopicName,
                                                             pa_enPubSubRole);
 
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2Primitives")
-    return new conversion_tests::Ros2PrimitivesPubSub(pa_sTopicName,
-                                                      pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2PrimitiveDatentypen")
-    return new conversion_tests::Ros2PrimitiveDatentypenPubSub(pa_sTopicName,
-                                                      pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2Arrayspezifikationen")
-    return new conversion_tests::Ros2ArrayspezifikationenPubSub(pa_sTopicName,
-                                                                pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2Arrayspezifikationen2")
-    return new conversion_tests::Ros2Arrayspezifikationen2PubSub(pa_sTopicName,
-                                                                pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2PrimitiverDatentyp")
-    return new conversion_tests::Ros2PrimitiverDatentypPubSub(pa_sTopicName,
-                                                                   pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2Referenzen")
-    return new conversion_tests::Ros2ReferenzenPubSub(pa_sTopicName,
-                                                      pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2DynamischesArray1")
-    return new conversion_tests::Ros2DynamischesArray1PubSub(pa_sTopicName,
-                                                      pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Ros2DynamischesArray2")
-    return new conversion_tests::Ros2DynamischesArray2PubSub(pa_sTopicName,
-                                                      pa_enPubSubRole);
-  // add other topic types here
-  if (pa_sTopicType == "conversion_tests::msg::Iec61499Bitstrings")
-    return new conversion_tests::Iec61499BitstringsPubSub(pa_sTopicName,
-                                                          pa_enPubSubRole);
+  // // add other topic types here
+  // if (pa_sTopicType == "conversion_tests::msg::Ros2Primitives")
+  //   return new conversion_tests::Ros2PrimitivesPubSub(pa_sTopicName,
+  //                                                     pa_enPubSubRole);
 
   return nullptr;
 }
