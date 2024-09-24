@@ -195,13 +195,13 @@ conversion_tests::msg::Iec61499Arrayspezifikationen2 conversion_tests::Iec61499A
   }
   dds.static_array_with_indexation17(static_array_with_indexation17);
 
-//  msg::wstring__2 static_array_with_indexation18 = {};
-//  counter = 0;
-//  for (CIEC_WSTRING element : ciec.var_static_array_with_indexation18) {
-//    static_array_with_indexation18[counter] = element.toString();
-//    counter++;
-//  }
-//  dds.static_array_with_indexation18(static_array_with_indexation18);
+  msg::wstring__2 static_array_with_indexation18 = {};
+  counter = 0;
+  for (CIEC_WSTRING element : ciec.var_static_array_with_indexation18) {
+    static_array_with_indexation18[counter] = general_purpose::msg::convertCIEC_WSTRING2Wstring(element);
+    counter++;
+  }
+  dds.static_array_with_indexation18(static_array_with_indexation18);
 
   return dds;
 }
@@ -465,17 +465,20 @@ CIEC_Iec61499Arrayspezifikationen2 conversion_tests::Iec61499Arrayspezifikatione
   DEVLOG_DEBUG("ciec.var_static_array_with_indexation17 Lower Bound: %ld\n", indexation17LowerBound);
   DEVLOG_DEBUG("ciec.var_static_array_with_indexation17 Upper Bound: %ld\n", indexation17UpperBound);
 
-//  CIEC_ARRAY_FIXED<CIEC_BOOL, -1, 0> static_array_with_indexation18 = {};
-//  counter = 0;
-//  for (bool element : dds.static_array_with_indexation18()) {
-//    static_array_with_indexation18[counter-1] = CIEC_BOOL(element);
-//    counter++;
-//  }
-//  ciec.var_static_array_with_indexation18 = static_array_with_indexation18;
-//  auto indexation18LowerBound = ciec.var_static_array_with_indexation18.getLowerBound();
-//  auto indexation18UpperBound = ciec.var_static_array_with_indexation18.getUpperBound();
-//  DEVLOG_DEBUG("ciec.var_static_array_with_indexation18 Lower Bound: %ld\n", indexation18LowerBound);
-//  DEVLOG_DEBUG("ciec.var_static_array_with_indexation18 Upper Bound: %ld\n", indexation18UpperBound);
+  CIEC_ARRAY_FIXED<CIEC_WSTRING, -1, 0> static_array_with_indexation18 = {};
+  counter = 0;
+  for (std::wstring element : dds.static_array_with_indexation18()) {
+    static_array_with_indexation18[counter-1] = general_purpose::msg::convertWstring2CIEC_WSTRING(element);
+    counter++;
+  }
+  ciec.var_static_array_with_indexation18 = static_array_with_indexation18;
+  auto indexation18LowerBound = ciec.var_static_array_with_indexation18.getLowerBound();
+  auto indexation18UpperBound = ciec.var_static_array_with_indexation18.getUpperBound();
+  sendDebug[1024] = {};
+  ciec.var_static_array_with_indexation18.toString(sendDebug, sizeof(sendDebug));
+  DEVLOG_DEBUG("var_static_array_with_indexation18: %s \n", sendDebug);
+  DEVLOG_DEBUG("ciec.var_static_array_with_indexation18 Lower Bound: %ld\n", indexation18LowerBound);
+  DEVLOG_DEBUG("ciec.var_static_array_with_indexation18 Upper Bound: %ld\n", indexation18UpperBound);
 
   return ciec;
 }
