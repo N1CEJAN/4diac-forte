@@ -24,6 +24,7 @@
 #include "types/conversion_tests/msg/Ros2PrimitiveDatentypen/Ros2PrimitiveDatentypenPubSub.h"
 #include "types/conversion_tests/msg/Ros2Referenzen/Ros2ReferenzenPubSub.h"
 #include "types/conversion_tests/msg/Ros2Arrayspezifikationen1/Ros2Arrayspezifikationen1PubSub.h"
+#include "types/conversion_tests/msg/Ros2Konstanten/Ros2KonstantenPubSub.h"
 #include "types/conversion_tests/msg/Iec61499PrimitiveDatentypen/Iec61499PrimitiveDatentypenPubSub.h"
 #include "types/conversion_tests/msg/Iec61499Arrayspezifikationen1/Iec61499Arrayspezifikationen1PubSub.h"
 #include "types/conversion_tests/msg/Iec61499Arrayspezifikationen2/Iec61499Arrayspezifikationen2PubSub.h"
@@ -218,6 +219,9 @@ CDDSPubSub *CDDSPubSub::selectPubSub(std::string pa_sTopicName,
   if (pa_sTopicType == "conversion_tests::msg::Ros2Arrayspezifikationen1")
     return new conversion_tests::Ros2Arrayspezifikationen1PubSub(pa_sTopicName,
                                                                  pa_enPubSubRole);
+  if (pa_sTopicType == "conversion_tests::msg::Ros2Konstanten")
+    return new conversion_tests::Ros2KonstantenPubSub(pa_sTopicName,
+                                                      pa_enPubSubRole);
   if (pa_sTopicType == "conversion_tests::msg::Iec61499PrimitiveDatentypen")
     return new conversion_tests::Iec61499PrimitiveDatentypenPubSub(pa_sTopicName,
                                                                    pa_enPubSubRole);

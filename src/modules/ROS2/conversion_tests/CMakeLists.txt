@@ -17,6 +17,7 @@ forte_add_sourcefile_hcpp(
         msg/ROS2_conversiontests_msg_Ros2PrimitiveDatentypen_dtp
         msg/ROS2_conversiontests_msg_Ros2Referenzen_dtp
         msg/ROS2_conversiontests_msg_Ros2Arrayspezifikationen1_dtp
+        msg/ROS2_conversiontests_msg_Ros2Konstanten_dtp
         msg/Iec61499PrimitiveDatentypen_dtp
         msg/Iec61499Arrayspezifikationen1_dtp
         msg/Iec61499Arrayspezifikationen2_dtp
